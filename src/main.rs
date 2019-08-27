@@ -30,8 +30,6 @@ struct Config {
 
 fn main() -> Result<(), MyError> {
     let args: Vec<String> = env::args().collect();
-    // println!("Got args {:?} and len={}", args, args.len());
-
     let config = configure(args)?;
     match generate_toc(config) {
         Ok(_) => Ok(()),
