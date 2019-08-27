@@ -1,6 +1,5 @@
 use std::env;
 use std::error::Error;
-// use std::fmt::{Debug, Display};
 use std::fs::File;
 use std::io::{self, BufRead, BufReader};
 use regex::Regex;
