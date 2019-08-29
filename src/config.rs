@@ -35,9 +35,9 @@ impl Config {
     pub fn generate_toc(&self) -> Result<(), io::Error> {
         let f = File::open(&self.filename)?;
         let reader = BufReader::new(f);
-        for line in reader.lines() {
-            toc::detect_heading(line.unwrap(), self.max_level);
-        }
+        let lines: Vec<String> = reader.lines().map(|line| line.unwrap()).collect();
+        let toc = toc::find_headings(lines, self.max_level);
+        println!("{}", toc.join("\n"));
         Ok(())
     }
 }

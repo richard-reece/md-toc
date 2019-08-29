@@ -6,6 +6,7 @@ use std::fmt;
 pub enum MyError {
     Usage(String),
     IoError(io::Error),
+    Skip
 }
 
 impl Error for MyError {}
@@ -15,6 +16,7 @@ impl fmt::Display for MyError {
         match self {
             MyError::IoError(e) => e.fmt(f),
             MyError::Usage(s) => f.write_str(s),
+            MyError::Skip => f.write_str("skipped"),
         }
     }
 }

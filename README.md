@@ -7,6 +7,13 @@ Usage:
 This was written as an excuse to learn some Rust, with a purpose (I wanted
 to be able to do this thing).
 
+To make it work, you'll need to `cargo make build` and then the above program
+appears in `./target/debug/md-toc`.
+
+To use the web version, after `cargo make build` run `cargo make serve` (or
+use any similar tool like `python3 -m http.server` in the directory containing
+`index.html`).
+
 
 # License
 
